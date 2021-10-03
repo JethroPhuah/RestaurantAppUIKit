@@ -66,9 +66,9 @@ class _DishesScreenState extends State<DishesScreen> {
               primary: false,
               physics: NeverScrollableScrollPhysics(),
               gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                crossAxisCount: 2,
-                childAspectRatio: MediaQuery.of(context).size.width /
-                    (MediaQuery.of(context).size.height / 1.25),
+                crossAxisCount: 1,
+                // childAspectRatio: MediaQuery.of(context).size.width /
+                //     (MediaQuery.of(context).size.height),
               ),
               itemCount: 4,
               itemBuilder: (BuildContext context, int index) {

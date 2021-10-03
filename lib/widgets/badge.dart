@@ -21,6 +21,7 @@ class _IconBadgeState extends State<IconBadge> {
         Icon(
           widget.icon,
           size: widget.size,
+          color: Colors.black,
         ),
         Positioned(
           right: 0.0,
@@ -39,7 +40,7 @@ class _IconBadgeState extends State<IconBadge> {
               child:Text(
                 "3",
                 style: TextStyle(
-                  color: Colors.white,
+                  color: Colors.red,
                   fontSize: 8,
                 ),
                 textAlign: TextAlign.center,

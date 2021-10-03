@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:restaurant_ui_kit/screens/cart.dart';
 import 'package:restaurant_ui_kit/screens/favorite_screen.dart';
 import 'package:restaurant_ui_kit/screens/home.dart';
+import 'package:restaurant_ui_kit/screens/location.dart';
 import 'package:restaurant_ui_kit/screens/notifications.dart';
 import 'package:restaurant_ui_kit/screens/profile.dart';
 import 'package:restaurant_ui_kit/screens/search.dart';
@@ -25,16 +26,42 @@ class _MainScreenState extends State<MainScreen> {
       onWillPop: ()=>Future.value(false),
       child: Scaffold(
         appBar: AppBar(
+          leadingWidth: 500,
+          leading:
+          Row(
+            children: [
+              IconButton(
+                icon: const Icon(Icons.my_location, color: Colors.red,),
+                onPressed: () {
+
+                },
+              ),
+              Expanded(
+                  child: Container(
+                    child: Text("current location",
+                      style: TextStyle(
+                        color: Colors.black,
+                      ),
+                    ),
+                  )
+              ),
+            ],
+          ),
+
+          backgroundColor: Colors.white,
           automaticallyImplyLeading: false,
           centerTitle: true,
           title: Text(
-            Constants.appName,
+            "HangOut",
+            style: TextStyle(color: Colors.black)
           ),
           elevation: 0.0,
           actions: <Widget>[
             IconButton(
               icon: IconBadge(
+
                 icon: Icons.notifications,
+
                 size: 22.0,
               ),
               onPressed: (){
@@ -56,7 +83,8 @@ class _MainScreenState extends State<MainScreen> {
           controller: _pageController,
           onPageChanged: onPageChanged,
           children: <Widget>[
-            Home(),
+            // Home(),
+            LocationScreen(),
             FavoriteScreen(),
             SearchScreen(),
             CartScreen(),
@@ -100,6 +128,7 @@ class _MainScreenState extends State<MainScreen> {
                 icon: Icon(
                   Icons.search,
                   size: 24.0,
+
                   color: Theme.of(context).primaryColor,
                 ),
                 color: _page == 2

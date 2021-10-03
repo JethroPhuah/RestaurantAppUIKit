@@ -3,6 +3,7 @@ import 'package:restaurant_ui_kit/screens/dishes.dart';
 import 'package:restaurant_ui_kit/widgets/grid_product.dart';
 import 'package:restaurant_ui_kit/widgets/home_category.dart';
 import 'package:restaurant_ui_kit/widgets/slider_item.dart';
+import 'package:restaurant_ui_kit/screens/location.dart';
 import 'package:restaurant_ui_kit/util/foods.dart';
 import 'package:restaurant_ui_kit/util/categories.dart';
 import 'package:carousel_slider/carousel_slider.dart';
@@ -60,7 +61,7 @@ class _HomeState extends State<Home> with AutomaticKeepAliveClientMixin<Home>{
                     Navigator.of(context).push(
                       MaterialPageRoute(
                         builder: (BuildContext context){
-                          return DishesScreen();
+                          return LocationScreen(); // remb to change back
                         },
                       ),
                     );
